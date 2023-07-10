@@ -1,0 +1,13 @@
+<h1>Lista de contactos</h1>
+<table>
+<tr>
+    <th>Nombre</th>
+    <th>Email</th>
+    <th>Mensaje</th>
+</tr>
+<tr *ngFor="let contacte of data">
+    <td>{{contacte.nombre}}</td>
+    <td>{{contacte.email}}</td>
+    <td>{{contacte.mensaje}}</td>
+</tr>
+</table>
