@@ -1,0 +1,35 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin-left: 160px;
+}
+
+td {
+    padding: 20px;
+}
+
+.td-esq {
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top; /* Alinear verticalmente el texto en la parte superior */
+    
+}
+span {
+    color: red;
+}
+input {
+    height: 20px;
+    width: 510px;
+
+}
+
+button {
+    height: 30px;
+    width: 60px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: solid blue;
+}

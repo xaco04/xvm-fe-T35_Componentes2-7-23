@@ -8,26 +8,35 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'problema_2';
 
-  nombre='';
-  email='';
-  mensaje='';
-  validacion='';
+  nombre = '';
+  email = '';
+  mensaje = '';
+  validacion = '';
+  errorValidacion = '';
 
-  contactos:any[] = []
+  contactos: any[] = [];
 
   afegircontacte() {
-    const noucontacte = {
-      nombre: this.nombre,
-      email: this.email,
-      mensaje: this.mensaje,
-      validacion: this.validacion
+    const validacionNum = parseInt(this.validacion, 10);
 
-    };
-    this.contactos.push(noucontacte);
+    if (validacionNum === 5) {
+      this.errorValidacion = '';
 
-    this.nombre='';
-    this.email='';
-    this.mensaje='';
-    this.validacion='';
+      const nuevoContacto = {
+        nombre: this.nombre,
+        email: this.email,
+        mensaje: this.mensaje,
+        validacion: this.validacion
+      };
+
+      this.contactos.push(nuevoContacto);
+
+      this.nombre = '';
+      this.email = '';
+      this.mensaje = '';
+      this.validacion = '';
+    } else {
+      this.errorValidacion = 'La validación es incorrecta';
+    }
   }
 }

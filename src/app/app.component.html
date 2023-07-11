@@ -6,13 +6,30 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<h1>Formulario de contacto</h1>
 
 <div>
-  <p>Nombre <input type="text" [(ngModel)]="nombre"></p>
-  <p>Email <input type="text" [(ngModel)]="email"></p>
-  <p>Mensaje<input type="text" [(ngModel)]="mensaje"></p>
-  <p>2+3=?<input type="text" [(ngModel)]="validacion"></p>
-  <button (click)="afegircontacte()">Enviar</button>
+  <tr>
+    <td class="td-esq">Nombre</td>
+    <td><input type="text" [(ngModel)]="nombre" placeholder="Nombre y apellido"> <br> <span class="error-message" *ngIf="!nombre">Introduzca su nombre y apellido</span></td>
+  </tr>
+  <tr>
+    <td class="td-esq">Email</td>
+    <td><input type="email" [(ngModel)]="email" placeholder="ejemplo@dominio.com"> <br> <span class="error-message" *ngIf="!email">Introduzca un email valido</span></td>
+  </tr>
+  <tr>
+    <td class="td-esq">Mensaje</td>
+    <td><textarea name="" id="" cols="70" rows="8" [(ngModel)]="mensaje"></textarea> <br> <span class="error-message" *ngIf="!mensaje">Introduzca un mensaje</span></td>
+  </tr>
+  <tr>
+    <td class="td-esq">2+3=?</td>
+    <td><input type="text" [(ngModel)]="validacion" placeholder="Respuesta"> <br> <span class="error-message" *ngIf="errorValidacion">Validacion anti-spam incorrecta</span></td>
+  </tr>
+  <tr>
+    <td class="td-esq"></td>
+    <td><button (click)="afegircontacte()">Enviar</button></td>
+  </tr>
+
 </div>
 
 <app-contacte [data]="contactos"></app-contacte>
